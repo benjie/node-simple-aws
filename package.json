@@ -1,0 +1,12 @@
+{
+  "name": "simple-dynamodb",
+  "version": "0.1.0",
+  "author": "Benjie Gillam <code@benjiegillam.com>",
+  "description": "Simple wrapper around AWS' official SDK",
+  "main": "./lib/simple",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "~0.9.5-pre.6",
+    "dynargs": "~0.1.0"
+  }
+}
