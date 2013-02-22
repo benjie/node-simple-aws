@@ -70,3 +70,8 @@ expected =
 ```
 
 `returnValues` is a string: either `NONE` or `ALL_OLD`
+
+`ddb.deleteItem(tableName, hash, [range,] [expected,] [returnValues,] callback)`
+--------------------------------------------------------------------------------
+
+See `putItem` above for `expected`/`returnValues`.
