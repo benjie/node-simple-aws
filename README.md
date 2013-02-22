@@ -49,3 +49,24 @@ name for the field and the second is the type.
 `attributesToGet` is an array of attribute names (strings).
 
 `consistentRead` is a boolean.
+
+`ddb.putItem(tableName, item, [expected,] [returnValues,] callback)`
+--------------------------------------------------------------------
+
+`item` is a simple JSON object of Attribute:Value.
+
+`expected` is an object where the keys are the attribute names, and the
+values are either `false` (to say you expect it not to exist) or the
+value you expect.
+
+Example:
+
+```
+expected =
+  { nonExistant: false
+  , equalsThree: 3
+  , helloWorld: "HelloWorld"
+  }
+```
+
+`returnValues` is a string: either `NONE` or `ALL_OLD`
