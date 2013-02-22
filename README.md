@@ -71,6 +71,30 @@ expected =
 
 `returnValues` is a string: either `NONE` or `ALL_OLD`
 
+`ddb.batchGetItem(itemsToGet, callback)`
+----------------------------------------
+
+`itemsToGet` is an object where the keys are the table names and the
+values are an array of either hash values or 2-tuples (pairs) of [hash,
+range] values.
+
+Example:
+
+```
+ddb.batchGetItem(
+  { MyTable:
+    [ [1, 1]
+    , [1, 3]
+    , [5, 92]
+    ]
+  , MyOtherTable:
+    [ "Key1"
+    , "Key3"
+    , "Key99"
+    ]
+  }, function(err, res) { /* ... */ });
+```
+
 `ddb.deleteItem(tableName, hash, [range,] [expected,] [returnValues,] callback)`
 --------------------------------------------------------------------------------
 
