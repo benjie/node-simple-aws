@@ -42,3 +42,10 @@ just wrappers around this.
 
 `hash` and `range` are 2-tuples (pairs) where the first entry is the
 name for the field and the second is the type.
+
+`ddb.getItem(tableName, hashValue, [rangeValue,] [attributesToGet,] [consistentRead,] callback)`
+------------------------------------------------------------------------------------------------
+
+`attributesToGet` is an array of attribute names (strings).
+
+`consistentRead` is a boolean.
