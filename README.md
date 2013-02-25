@@ -95,6 +95,18 @@ ddb.batchGetItem(
   }, function(err, res) { /* ... */ });
 ```
 
+`ddb.batchWriteItem(itemsToPut, itemsToDelete, callback)`
+------------------------------------------
+
+`itemsToPut`: map of table to items to add to said table. Items are
+simple JS objects.
+
+`itemsToPut`: map of table to keys to delete from said table. Keys are
+either the hash values or 2-tuples (pairs) of [hash, range] values.
+
+This method automatically re-attempts to write the UnprocessedItems 3
+times, saving you effort.
+
 `ddb.deleteItem(tableName, hash, [range,] [expected,] [returnValues,] callback)`
 --------------------------------------------------------------------------------
 
