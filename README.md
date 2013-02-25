@@ -18,7 +18,7 @@ Usage
 var SimpleDynamoDB = require('simple-dynamodb')
 var ddb = new SimpleDynamoDB()
 
-ddb.getItem(tableName, hashValue, function(err, res){})
+ddb.getItem(tableName, hashValue, function(err, res, item){})
 ```
 
 All methods of ddb are simple wrappers around AWS' official methods,
@@ -55,6 +55,8 @@ ddb.getItem(tableName, hashValue, [rangeValue,] [attributesToGet,] [consistentRe
 `attributesToGet` is an array of attribute names (strings).
 
 `consistentRead` is a boolean.
+
+`callback` arguments: (err, res, item)
 
 ddb.putItem(tableName, item, [expected,] [returnValues,] callback)
 --------------------------------------------------------------------
@@ -101,6 +103,9 @@ ddb.batchGetItem(
   }, function(err, res) { /* ... */ });
 ```
 
+`callback` arguments: (err, res, items) where items takes the form
+{TableName: [entry, entry, entry]}
+
 ddb.batchWriteItem(itemsToPut, itemsToDelete, callback)
 ------------------------------------------
 
@@ -137,7 +142,12 @@ Examples:
 `attributesToGet` is a simple array of the attribute names you wish to
 fetch.
 
+`callback` arguments: (err, res, items) where items takes the form
+[entry, entry, entry]
+
 ddb.queryCount(tableName, hashValue, [rangeKeyCondition,] [limit,] [consistentRead,])
 ------------------------------------------------------------------------------------------------------------
 As above, but results in the number of matched records and not the
 records themselves.
+
+`callback` arguments: (err, res, count).
