@@ -111,3 +111,27 @@ times, saving you effort.
 --------------------------------------------------------------------------------
 
 See `putItem` above for `expected`/`returnValues`.
+
+`ddb.query(tableName, hashValue, [rangeKeyCondition,] [attributesToGet,] [limit,] [consistentRead,])`
+--------------------------------------------------------------------------------------------------------------------------
+
+Doesn't support `ScanIndexForward:false`.
+
+`rangeKeyCondition` takes the form: `[comparison, value, value2]` where
+`value2` is only required when comparison is `BETWEEN`. SimpleDynamoDB
+automatically translates the standard comparison operators `<`, `>`,
+`<=`, `>=`, `=`, `==`, `===` and passes other values straight through
+to AWS' implementation.
+
+Examples:
+ - `rangeKeyCondition = [">", 27]`
+ - `rangeKeyCondition = ["GT", 27]`
+ - `rangeKeyCondition = ["BETWEEN", 27, 99]`
+
+`attributesToGet` is a simple array of the attribute names you wish to
+fetch.
+
+`ddb.queryCount(tableName, hashValue, [rangeKeyCondition,] [limit,] [consistentRead,])`
+------------------------------------------------------------------------------------------------------------
+As above, but results in the number of matched records and not the
+records themselves.
