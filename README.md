@@ -5,6 +5,12 @@ Amazon have released an official [aws-sdk][] module for Node.JS - this
 is fantastic! However, interfacing with it is very verbose, so why not
 wrap it up?
 
+Stability
+=========
+
+**UNSTABLE**: Haven't even implemented a test suite yet - please do
+feel free to jump in and submit one!
+
 Usage
 =====
 
