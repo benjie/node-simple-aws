@@ -151,3 +151,5 @@ As above, but results in the number of matched records and not the
 records themselves.
 
 `callback` arguments: (err, res, count).
+
+[aws-sdk]: http://aws.amazon.com/sdkfornodejs/
