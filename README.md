@@ -15,7 +15,7 @@ Usage
 =====
 
 ```
-var SimpleDynamoDB = require('simple-dynamodb')
+var SimpleDynamoDB = require('simple-dynamodb').SimpleDynamoDB
 var ddb = new SimpleDynamoDB()
 
 ddb.getItem(tableName, hashValue, function(err, res, item){})
@@ -26,8 +26,8 @@ helping to protect against misspelled object keys/etc. SimpleDynamoDB
 uses type inference to figure out your intention, so ensure passed
 arguments are of the correct type!
 
-DynamoDB(options)
--------------------
+SimpleDynamoDB(options)
+-----------------------
 
 Options are passed straight on to the AWS DynamoDB instance - you can
 use this to feed in your `accessKeyId`, `secretAccessKey` and `region`.
