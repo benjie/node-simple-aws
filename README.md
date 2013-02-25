@@ -26,37 +26,37 @@ helping to protect against misspelled object keys/etc. SimpleDynamoDB
 uses type inference to figure out your intention, so ensure passed
 arguments are of the correct type!
 
-`DynamoDB(options)`
+DynamoDB(options)
 -------------------
 
 Options are passed straight on to the AWS DynamoDB instance - you can
 use this to feed in your `accessKeyId`, `secretAccessKey` and `region`.
 
-`ddb.client`
+ddb.client
 ------------
 
 This is the DynamoDB instance from aws-sdk, all other functions are
 just wrappers around this.
 
-`ddb.listTables([exclusiveStartTableName,] [limit,] callback)`
+ddb.listTables([exclusiveStartTableName,] [limit,] callback)
 --------------------------------------------------------------
 
 `limit` must be a number or `null`.
 
-`ddb.createTable(tableName, hash, [range,] [readThroughput,] [writeThroughput,] callback)`
+ddb.createTable(tableName, hash, [range,] [readThroughput,] [writeThroughput,] callback)
 ------------------------------------------------------------------------------------------
 
 `hash` and `range` are 2-tuples (pairs) where the first entry is the
 name for the field and the second is the type.
 
-`ddb.getItem(tableName, hashValue, [rangeValue,] [attributesToGet,] [consistentRead,] callback)`
+ddb.getItem(tableName, hashValue, [rangeValue,] [attributesToGet,] [consistentRead,] callback)
 ------------------------------------------------------------------------------------------------
 
 `attributesToGet` is an array of attribute names (strings).
 
 `consistentRead` is a boolean.
 
-`ddb.putItem(tableName, item, [expected,] [returnValues,] callback)`
+ddb.putItem(tableName, item, [expected,] [returnValues,] callback)
 --------------------------------------------------------------------
 
 `item` is a simple JSON object of Attribute:Value.
@@ -77,7 +77,7 @@ expected =
 
 `returnValues` is a string: either `NONE` or `ALL_OLD`
 
-`ddb.batchGetItem(itemsToGet, callback)`
+ddb.batchGetItem(itemsToGet, callback)
 ----------------------------------------
 
 `itemsToGet` is an object where the keys are the table names and the
@@ -101,7 +101,7 @@ ddb.batchGetItem(
   }, function(err, res) { /* ... */ });
 ```
 
-`ddb.batchWriteItem(itemsToPut, itemsToDelete, callback)`
+ddb.batchWriteItem(itemsToPut, itemsToDelete, callback)
 ------------------------------------------
 
 `itemsToPut`: map of table to items to add to said table. Items are
@@ -113,12 +113,12 @@ either the hash values or 2-tuples (pairs) of [hash, range] values.
 This method automatically re-attempts to write the UnprocessedItems 3
 times, saving you effort.
 
-`ddb.deleteItem(tableName, hash, [range,] [expected,] [returnValues,] callback)`
+ddb.deleteItem(tableName, hash, [range,] [expected,] [returnValues,] callback)
 --------------------------------------------------------------------------------
 
 See `putItem` above for `expected`/`returnValues`.
 
-`ddb.query(tableName, hashValue, [rangeKeyCondition,] [attributesToGet,] [limit,] [consistentRead,])`
+ddb.query(tableName, hashValue, [rangeKeyCondition,] [attributesToGet,] [limit,] [consistentRead,])
 --------------------------------------------------------------------------------------------------------------------------
 
 Doesn't support `ScanIndexForward:false`.
@@ -137,7 +137,7 @@ Examples:
 `attributesToGet` is a simple array of the attribute names you wish to
 fetch.
 
-`ddb.queryCount(tableName, hashValue, [rangeKeyCondition,] [limit,] [consistentRead,])`
+ddb.queryCount(tableName, hashValue, [rangeKeyCondition,] [limit,] [consistentRead,])
 ------------------------------------------------------------------------------------------------------------
 As above, but results in the number of matched records and not the
 records themselves.
