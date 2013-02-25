@@ -47,7 +47,8 @@ ddb.createTable(tableName, hash, [range,] [readThroughput,] [writeThroughput,] c
 ------------------------------------------------------------------------------------------
 
 `hash` and `range` are 2-tuples (pairs) where the first entry is the
-name for the field and the second is the type.
+name for the field and the second is the type: "S" (string), "N"
+(numeric) or "B" (binary).
 
 ddb.getItem(tableName, hashValue, [rangeValue,] [attributesToGet,] [consistentRead,] callback)
 ------------------------------------------------------------------------------------------------
