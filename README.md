@@ -49,3 +49,4 @@ License
 -------
 
 [MIT license](http://benjie.mit-license.org/)
+[aws-sdk]: http://aws.amazon.com/sdkfornodejs/

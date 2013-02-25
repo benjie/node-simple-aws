@@ -53,3 +53,5 @@ Since `maxNumberOfMessages`, `waitTimeInSeconds` and
 to right (i.e. you cannot omit `waitTimeInSeconds` if you want to specify
 `visibilityTimeout`). Any parameters you wish to leave as their default
 value simply pass `undefined` (**NOT** null).
+
+[aws-sdk]: http://aws.amazon.com/sdkfornodejs/
