@@ -59,6 +59,16 @@ expected =
 
 `returnValues` is a string: either `NONE` or `ALL_OLD`
 
+ddb.updateItem(tableName, hash, [range,] updates, [expected,] [returnValues,] callback)
+------------------------------------------------------------------
+
+`updates` is a hash of attribute:[action,[value]], where `action` is
+one of 'PUT', 'ADD' and 'DELETE'. `value` is optional.
+
+Alternatively, `updates` can be a hash of property:value so long as at
+least one of the values is not an array. In this case the 'PUT' action
+is assumed.
+
 ddb.batchGetItem(itemsToGet, callback)
 --------------------------------------
 
