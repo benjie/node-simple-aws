@@ -33,14 +33,16 @@ library.
 Supported APIs
 --------------
 
- * [DynamoDB](DynamoDB.md) - 8 methods supported
+ * [DynamoDB](DynamoDB.md) - 9 methods supported
  * [SQS](SQS.md) - 5 methods supported
+ * [SES](SES.md) - 1 methods supported
 
 Contributions
 -------------
 
-The wrapper functions are very simple, so if an API you need is missing
-feel free to implement it yourself and submit a pull request.
+The wrapper functions are very simple (and hopefully consistent), so if
+an API you need is missing feel free to implement it yourself and submit
+a pull request.
 
 There's no test suite yet - if you fancy making one that would be much
 appreciated!
